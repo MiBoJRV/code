@@ -1,0 +1,126 @@
+.footer {
+  background: var(--blue-color);
+  padding: 50px 0 0;
+  color: var(--white-color);
+  &__contact {
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+    padding-bottom: 100px;
+    flex-wrap: wrap;
+    @media (min-width: $desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  &__link-box {
+    padding-bottom: 15px;
+  }
+  &__address {
+    font-size: 16px;
+    line-height: 20px;
+    font-style: normal;
+    display: block;
+    width: 290px;
+  }
+  &__contact-wrap {
+    @media (min-width: $tablet) {
+      display: flex;
+      gap: 56px;
+    }
+  }
+  &__contact-info {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+  &__contact-info1 {
+    padding-bottom: 16px;
+    @media (min-width: $tablet) {
+      flex-shrink: 0;
+      padding-bottom: 0;
+    }
+  }
+  &__title {
+    color: var(--primary-color);
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 900;
+    margin: 0 0 10px;
+  }
+  &__holder {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 50px;
+    @media (min-width: $tablet) {
+    flex-direction: row;
+    }
+  }
+  &__list-block {
+    flex-grow: 1;
+    gap:  40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @media (min-width: $desktop) {
+      flex-wrap: nowrap;
+      gap:  20px;
+    }
+  }
+  &__list {
+    @include customUl;
+    display: grid;
+    grid-gap: 10px;
+  }
+  &__link {
+    color: var(--white-color);
+    font-size: 16px;
+    line-height:  20px;
+  }
+  &__copy {
+   background-color: var(--dark-blue-color);
+   padding: 15px 0;
+   text-align: center;
+   color: #9999A6;
+  }
+  &__copy-text {
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0;
+  }
+  &__logo-list {
+    @include customUl;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 130px;
+  }
+  &__logo-icon {
+    max-width: 100%;
+    height: auto;
+  }
+  &__text-block {
+    padding-bottom: 35px;
+  }
+  &__text {
+    margin: 0 0 20px;
+    color: #ACACAC;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+.num-link {
+  color: var(--white-color);
+  font-size: 16px;
+  line-height: 20px;
+}

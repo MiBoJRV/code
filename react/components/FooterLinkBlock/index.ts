@@ -1,0 +1,1 @@
+export { FooterLinkBlock } from './FooterLinkBlock';

@@ -1,0 +1,56 @@
+---
+import HtmlLayout from 'src/layouts/HtmlLayout.astro';
+import { MainLayout } from 'src/layouts';
+import {
+  SaasMainBanner,
+  ObstaclesSection,
+  ProductLifecycleSection,
+  ProductLifecycleStageSection,
+  SaasExpertiseSection,
+  ClientApproachSection,
+  EngagementSection,
+} from 'src/views/saasService';
+import { PageSection } from 'src/ui-kit';
+import {
+  CallToActionSection,
+  CallToActionBracketsSection,
+  TestimonialItem,
+} from 'src/components';
+import {
+  SAAS_MAIN_BANNER,
+  OBSTACLES_DATA,
+  SAAS_STARTUP_DATA,
+  SAAS_PRODUCT_DATA,
+  SAAS_SOLUTION_DATA,
+  SAAS_EXPERTISE,
+  SAAS_DEVELOP_DATA,
+  SAAS_AUDIT_DATA,
+  CLIENT_APPROACH_DATA,
+  ENGAGEMENT_DATA,
+  TESTIMOMIALS_CONFIG,
+  BUILDING_SAAS_DATA,
+} from 'src/constants';
+---
+
+<HtmlLayout title="SaaS Application Development Company">
+  <MainLayout client:visible>
+    <SaasMainBanner {...SAAS_MAIN_BANNER} />
+    <ObstaclesSection {...OBSTACLES_DATA} />
+    <CallToActionBracketsSection {...BUILDING_SAAS_DATA} />
+    <ProductLifecycleSection />
+    <ProductLifecycleStageSection {...SAAS_STARTUP_DATA} />
+    <ProductLifecycleStageSection {...SAAS_PRODUCT_DATA} />
+    <ProductLifecycleStageSection {...SAAS_SOLUTION_DATA} />
+    <PageSection>
+      <TestimonialItem isSliderItem={false} {...TESTIMOMIALS_CONFIG[0]} />
+    </PageSection>
+    <SaasExpertiseSection {...SAAS_EXPERTISE} />
+    <CallToActionSection {...SAAS_AUDIT_DATA} />
+    <PageSection>
+      <TestimonialItem isSliderItem={false} {...TESTIMOMIALS_CONFIG[1]} />
+    </PageSection>
+    <EngagementSection {...ENGAGEMENT_DATA} />
+    <ClientApproachSection {...CLIENT_APPROACH_DATA} />
+    <CallToActionSection {...SAAS_DEVELOP_DATA} />
+  </MainLayout>
+</HtmlLayout>

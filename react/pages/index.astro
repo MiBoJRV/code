@@ -1,0 +1,34 @@
+---
+import HtmlLayout from 'src/layouts/HtmlLayout.astro';
+import { MainLayout } from 'src/layouts';
+import {
+  MainBanner,
+  ChallengesSection,
+  RiskySection,
+  MeetSection,
+  ModernTechSection,
+  ValueSection,
+  OurWorkSection,
+  AchievementsSection,
+  AvangaSection,
+  ServiceSection,
+  TestimonialsSection,
+} from 'src/views/main';
+import { CTO_SERVICE_DATA } from 'src/constants';
+---
+
+<HtmlLayout title="Wetelo - Software Product Development Company">
+  <MainLayout client:visible>
+    <MainBanner client:visible />
+    <ChallengesSection />
+    <RiskySection />
+    <MeetSection />
+    <ServiceSection {...CTO_SERVICE_DATA} />
+    <ModernTechSection />
+    <OurWorkSection />
+    <AvangaSection />
+    <TestimonialsSection client:visible />
+    <ValueSection client:visible />
+    <AchievementsSection />
+  </MainLayout>
+</HtmlLayout>

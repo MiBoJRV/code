@@ -1,0 +1,357 @@
+<style type="text/css">
+    .banner{
+        max-height: 375px;
+        background: #000;
+        overflow: hidden;
+        position: relative;
+    }
+    .banner .banner-img{
+        width: 100%;
+        opacity: 0.65;
+    }
+    .banner h1{
+        padding:0 15px;
+        margin: 0;
+        font-size: 52px;
+        color: #fff;
+        text-align: center;       
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%, -50%);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+    .main-content {
+        padding: 30px 0 50px;
+        min-height: 500px;
+        background: #F0F1F3;       
+    }
+    .container_wrap {
+        padding: 0 15px;
+        margin: 0 auto;
+        max-width: 1510px;
+        width: 100%;
+    }
+    .blogMainContent {
+        width: calc(100% - 510px);
+    }
+    .blogMainContent article {
+        padding: 50px;
+        background: #fff;
+        border: 1px solid #DFDFDF;
+        font-size: 16px;
+    }
+    .blogMainContent article h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    /*Sidebar Blog*/
+    .sidebarBlog{
+        padding: 0 15px 40px;
+        width: 510px;
+        float: right;
+    }
+    .sidebarBlog h2{
+        margin: 0;
+        padding: 23px 0;
+        letter-spacing: 0;
+        text-align: center;
+        font: 400 24px/35px Montserrat;
+        letter-spacing: 2.4px;
+        color: rgba(41, 41, 41, 1);
+        border-bottom: 1px solid #D6D6D6;
+    }
+    .sidebarBlog .cat-list{
+        margin: 0;
+        padding: 25px;
+        list-style: none;
+    }
+    .sidebarBlog .cat-list li{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom:10px;
+        display: inline-block;
+    }
+    .sidebarBlog .cat-list li:last-child {
+        margin-bottom: 0;
+    }
+    .sidebarBlog .cat-list li a{
+        color: rgba(4, 12, 20, 0.7);
+        font-weight: 300;
+    }
+    .sidebarBlog .cat-list li a:hover{
+        color: var(--main_color);
+        text-decoration: none;
+    }
+    .sidebarBlog form{
+        overflow: hidden;
+    }
+    .sidebarBlog form+h2{
+        margin-top: 0;
+    }
+    .sidebarBlog .imageIn{
+        margin-right: 15px;
+        width: 130px;
+        height: 100px;
+        overflow: hidden;
+    }
+    .sidebarBlog .imageIn img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .sidebarBlog .singlePost h4{
+        margin-top: 26px;
+        max-height: 70px;
+        overflow: hidden;
+        font-weight: 700;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+    }
+    .sidebarBlog .singlePost h4 a{
+        color: #292929;
+        font-size: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font: 500 15px/32px Montserrat;
+        letter-spacing: 0;
+        color: rgba(41, 41, 41, 1);
+    }
+    .sidebarBlog .singlePost h4 a:hover{
+        color: var(--hover_color);
+        text-decoration: none;
+    }
+    .sidebarBlog .singlePost .star-rating {
+        list-style: none;
+        margin: 0;
+        font-size: 12px;
+        color: var(--main_color);
+    }
+    .sidebarBlog .singlePost .star-rating li {
+        display: inline-block;
+    }
+    /*singlePostCont*/
+    .leftFloat {
+        float: left;
+    }
+    .popularPost {
+        padding: 10px 10px 0;
+    }
+    .popularPost:not(:last-child){
+        margin-bottom: 0px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #D6D6D6;
+    }
+    .popularPost h4{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        color: <?=$main_color?>;
+        padding-right: 10px;
+    }
+    /*singlePost*/
+    .searchPost{
+        margin: 30px 0;
+    }
+    .searchPost input:first-child{
+        height: 60px;
+        border: 1px solid var(--main_color);
+        border-right: none;
+    }
+    .searchPost input::-moz-placeholder{
+        color: rgba(41, 41, 41, 0.75);
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 60px;
+        opacity: .5;
+    }
+    .searchPost input::-webkit-input-placeholder {
+        color: rgba(41, 41, 41, 0.75);
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 1.5;
+        opacity: .5;
+    }
+    .searchPost input:last-child{
+        height: 60px;
+        background: var(--main_color) url('/wp-content/themes/BizcorLuxury/images/search_white.svg') no-repeat;
+        background-size: auto 50%;
+        background-position: center center;
+        border: none;
+    }
+    .searchPost input:last-child:hover{
+        background-color: var(--hover_color);
+    }
+    .popularPost span{
+        color: <?=$main_color?>;
+        font-size: 14px;
+    }
+    .sideBarReadMore {
+        color: <?=$main_color?>;
+    }
+    .sideBarReadMore:hover {
+        color: #43c3ff;
+    }
+    .sidebarBlog .singlePost{
+        margin-top: 0;
+        padding-bottom: 10px;
+    }
+    .box-white {
+        background: #fff;
+        margin-bottom: 30px;
+        border: 1px solid #D6D6D6;
+    }
+    .c-search-widget__item .form-control.is-focused, 
+    .c-search-widget__item .form-control:focus {
+        border-color: #ccc;
+    }
+
+    /*Responsive*//*Responsive*//*Responsive*/
+    @media(max-width: 1455px) { 
+        .sidebar-featured-block .sidebar-featured-txt h3 {
+            font-size: 30px;
+        }
+    }
+    @media(max-width: 1199px) {
+        .blogMainContent, .sidebarBlog {
+            width: 100%;
+        }
+        .blogMainContent {
+            margin-bottom: 30px;
+        }
+        .main-content, .sidebarBlog {
+            padding-bottom: 0;
+        }
+        .blogMainContent article {
+            padding: 20px;
+        }
+    }
+    @media(max-width:767px){
+        .banner h1{
+            font-size:30px;
+        }
+    }
+</style>
+
+<?php
+    $banner_img_url = $default_banner_img_url;
+    $default_unit_img_url = $default_banner_img_url;
+?>
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post() ?>
+        <?php wpb_set_post_views(get_the_ID()); ?>
+        <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnails'); ?>
+        <section class="banner container-fluid">
+            <div class="row">
+                <?php
+                if($thumb[0]==''){
+                    echo '<img src="'.$default_banner_img_url.'" alt="" class="banner-img"/>';
+                }else{
+                    echo '<img src="'.$thumb[0].'" alt="" class="banner-img"/>';
+                }
+                ?>
+                <h1><?php the_title(); ?></h1>
+            </div>
+        </section><!-- end banner -->
+    <?php endwhile; ?>
+<?php endif; ?>
+<section class="main-content">
+    <div class="container_wrap">
+        <div class="row">
+            <div class="col-md-12 blogMainContent">
+                <article>
+                    <?php the_content(); ?>
+                </article>
+            </div><!--End col-md-12-->
+            <div class="sidebarBlog">
+                <?php include(get_theme_root().'/'.get_option('stylesheet').'/templates-parts/sidebar-parts/start-vacation.php');?>
+                <div class="box-white">
+                    <h2>Popular Posts</h2>
+                    <div class="singlePost">
+                        <?php
+                        $popularpost = new WP_Query( array( 'posts_per_page' => 3, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+                        while ($popularpost->have_posts()) : $popularpost->the_post();
+                            $img_url = (get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : $default_unit_img_url;
+                            ?>
+                            <div class="popularPost customClear">
+                                <div class="imageIn leftFloat">
+                                    <img src="<?=$img_url?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/>
+                                </div>
+                                <h4><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                <!-- <a href="<?=get_permalink()?>" class="sideBarReadMore">Read More</a> -->
+                                <ul class="star-rating">
+                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                </ul>         
+                            </div>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </div>
+                <?php get_search_form(); ?>
+                <!-- <div class="box-white">
+                    <h2>recent posts</h2>
+                    <div class="singlePost">
+                        <?php
+                        $args = array(
+                            'post_type' => 'post',
+                            'posts_per_page' => 3,
+                        );
+                        $query = new WP_Query($args);
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()): $query->the_post();
+                                $img_url = (get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : $default_unit_img_url;
+                                ?>
+                                <div class="popularPost customClear">
+                                    <div class="imageIn leftFloat">
+                                        <img src="<?=$img_url?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/>
+                                    </div>
+                                    <h4><a href="<?=get_permalink()?>"><?php the_title(); ?></a></h4>
+                                    <span><?php the_time('m/j/Y'); ?></span>
+                                </div>
+                                <?php
+                            endwhile;
+                        endif;
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </div> -->
+                <div class="box-white">
+                    <h2 class="catTitle">Browse Categories</h2>
+                    <ul class="cat-list">
+                        <?php wp_list_categories( array(
+                            'orderby'  => 'name',
+                            'title_li' => '',
+                        ) ); ?>
+                    </ul>
+                </div>
+            </div><!--end of blogItemRight-->
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    jQuery(window).load(function(){
+        if(window.innerWidth > 767){
+            var heiEntr = jQuery('.banner').height();
+            var heiImg =  jQuery('.banner .banner-img').height();
+            if(heiImg > heiEntr){
+                var resHei = (heiImg - heiEntr)/2;
+            }
+            jQuery('.banner .banner-img').css({'margin-top' : -resHei});
+        }
+    });
+</script>

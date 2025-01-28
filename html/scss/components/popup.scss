@@ -1,0 +1,137 @@
+.popup {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #007BFF 100%);
+  padding: 30px 40px;
+  z-index: 10;
+  max-width: 574px;
+  border-radius: 16px;
+  display: none;
+  @media (min-width: $tablet) {
+    padding: 80px 40px 48px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    background: #EBF2FF;
+    border-radius: 16px;
+  }
+  &__title {
+    color: var(--primary-color);
+    text-align: center;
+  }
+}
+.contact-form {
+  width: 320px;
+  margin: 0 auto;
+  &__input {
+    display: block;
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    margin: 0 0 24px;
+    padding: 22px 16px;
+    font-size: 12px;
+    line-height: 16px;
+    border: none;
+    color: var(--dark-blue-color);
+    @media (min-width: $tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &::placeholder {
+      opacity: 0.4;
+      color: var(--dark-blue-color);
+    }
+  }
+  &__select-box {
+    margin: 0 0 48px;
+  }
+  &__select-holder {
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 8px 15px;
+    height: 64px;
+    color: var(--dark-blue-color);
+  }
+  &__select {
+    position: relative;
+    width: 74px;
+    border-right: 2px solid var(--primary-color);
+  }
+  &__select-caption {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    &.active {
+      &::after {
+        transform: rotate(135deg);
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 9px;
+      top: 14px;
+      width: 12px;
+      height: 12px;
+      transform: rotate(-45deg);
+      border: solid var(--primary-color);
+      border-width: 0 0 2px 2px;
+    }
+  }
+  &__select-list {
+    position: absolute;
+    top: 100%;
+    border-radius: 8px;
+    left: -15px;
+    visibility: hidden;
+    opacity: 0;
+    padding: 7px 25px 15px;
+    background-color: var(--white-color);
+    box-shadow: 0px 10px 20px 0px rgba(10, 45, 97, 0.1);
+  }
+  &__input-number {
+    border: none;
+    padding: 0;
+    background: none;
+    font-size: 12px;
+    line-height: 16px;
+    @media (min-width: $tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  &__label {
+    color: #32325A;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 3px;
+  }
+  &__btn {
+    text-transform: uppercase;
+  }
+}
+.fancybox__container {
+  max-width: 100%;
+  .fancybox__backdrop {
+    opacity: 0.5;
+    background-color: var(--dark-blue-color);
+  }
+  .popup {
+    .is-close-btn {
+      top: 8px;
+      right: 8px;
+      svg {
+        stroke: var(--dark-blue-color)
+      }
+    }
+  }
+}
+

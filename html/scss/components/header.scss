@@ -1,0 +1,207 @@
+.header {
+  width: 100%;
+  position: sticky;
+  background-color: var(--secondary-color);
+  z-index: 2;
+  padding: 7px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav {
+  font-size: 16px;
+  line-height: 20px;
+  @media (min-width: $desktop) {
+    padding-top: 6px;
+    order: 1;
+  }
+  &__btn {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    background: none;
+    padding: 0;
+    border: none;
+    span,
+    &::before,
+    &::after {
+      content: '';
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white-color);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - 1px);
+    }
+    .active & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - 1px);
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - 1px);
+        transform: rotate(45deg);
+      }
+    }
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+  &__list {
+    display: none;
+    @include customUl;
+    .active & {
+      display: grid;
+      grid-gap: 10px;
+      position: absolute;
+      min-width: 300px;
+      top: 100%;
+      right: 0;
+      background: var(--secondary-color);
+      padding: 20px;
+    }
+    @media (min-width: $desktop) {
+      display: flex;
+      position: static;
+      gap: 24px;
+    }
+  }
+  &__link {
+    color: var(--white-color);
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background-color: var(--white-color);
+      transition: width var(--bs-transition);
+    }
+    &:hover {
+      text-decoration: none;
+      &::after {
+        width: 100%;
+      }
+    }
+    .nav__has-drop &{
+      @media (min-width: $desktop) {
+        padding-right: 21px;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 8px;
+          background-image: url(../images/arrow01.svg);
+          width: 12px;
+          height: 6px;
+        }
+      }
+    }
+  }
+  &__has-drop {
+    @media (min-width: $desktop) {
+      position: relative;
+      padding-bottom: 6px;
+      &:hover {
+        .nav__drop {
+          display: block;
+        }
+      }
+    }
+  }
+  &__drop {
+    @include customUl;
+    position: absolute;
+    padding: 16px 0;
+    left: -10px;
+    display: none;
+    top: 100%;
+    min-width: 175px;
+    background-color: var(--white-color);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+    box-shadow: 0 2px 5px 1px rgba(0,43,92,0.4);
+  }
+  &__drop-link {
+    display: block;
+    padding: 6px 16px 6px 24px;
+    color: var(--blue-color);
+    &:hover {
+      background-color: rgba(0,43,92,0.16);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    &.active {
+      font-weight: 700;
+    }
+  }
+}
+.login-menu {
+  @include customUl;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-right: 40px;
+  @media (min-width: $desktop) {
+    order: 2;
+    flex-grow: 0;
+  }
+  &__btn {
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &__sign-in {
+    border: none;
+    color: var(--white-color);
+    transition: var(--bs-transition);
+    &:hover {
+      color: var(--light-blue-color);
+    }
+  }
+  &__login {
+    border: 1px solid var(--light-blue-color);
+    border-radius: 30px;
+    padding: 7px 25px;
+    color: var(--light-blue-color);
+    &:hover {
+      border-color: var(--white-color);
+      color: var(--white-color);
+    }
+  }
+}
+

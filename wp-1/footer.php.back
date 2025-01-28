@@ -1,0 +1,236 @@
+<footer>
+    <?php if (get_field('footer_variants', get_homePageId()) == 'Standard'): ?>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="line left"></span>
+                <a href="#">
+                    <!--<img src="<?php echo get_stylesheet_directory_uri() ?>/images/BIZCOR-LOGO-White-Text.png" alt="logo">-->
+                    <?php $image = get_field('footer_logo', 268); ?>
+                    <img src="<?php echo $image['url']; ?>" title="" alt="<?php echo $image['alt']; ?>"/>
+                </a>
+                <span class="line right"></span>
+            </div>
+            <div class="footer-box">
+                <div class="footer-contact footer-block">
+                    <ul>
+                        <li>
+                            <h3>Our Address</h3>
+                            <p><strong>Peace Vacations</strong><br/> 35 Capers Way <br/> Pawleys Island, SC 29585 </p>
+                        </li>
+                        <li>
+                            <h3>Give Us A Call</h3>
+                            <?php $phone = preg_replace('/[^0-9.]/', '', get_field('tel_number', 268)); ?>
+                            <p><a href="tel:<?php echo $phone; ?>"><?php echo get_field('tel_number', 268); ?></a></p>
+                        </li>
+                    </ul>
+                </div><!--end footer-contact-->
+                <div class="footer-subscribe footer-block">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <?= do_shortcode('[gravityform id=9 title=false description=false ajax=true tabindex=49]') ?>
+					<div class="sl-img">
+						<a rel="nofollow" href="https://www.streamlinevrs.com/"><img src="/wp-content/uploads/2022/04/Light-Logo.svg" alt="Streamline Vacation Rental Software"></a>
+					</div>
+                </div><!--end footer-contact-->
+
+                <div class="footer-links footer-block">
+                    <div class="innerCont">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <?php if (have_rows('quick_links', get_homePageId())): ?>
+                                <?php while (have_rows('quick_links', get_homePageId())): the_row(); ?>
+                                    <li>
+                                        <a href="<?php the_sub_field('link', get_homePageId()); ?>"><?php the_sub_field('link_text', get_homePageId()); ?></a>
+                                    </li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </ul>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/peacevacations" target="_blank" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/Facebook-footer.svg" alt="#"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/peacevacations/" target="_blank" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/instagram-solid-circle.svg" alt="#"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCn67RRgBd6ErMGOtIZc513A" target="_blank" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/youtube.svg" alt="#"></a>
+                            </li>
+                        </ul>
+                    </div><!--End innerCont-->
+                </div><!--end footer-links-->
+            </div><!--end footer-box-->
+        </div><!--end footer-container-->
+    <?php elseif (get_field('footer_variants', get_homePageId()) == 'Contact&Menus'): ?>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="line left"></span>
+                <a href="#"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/logo-white.svg" alt="logo"></a>
+                <span class="line right"></span>
+            </div>
+            <div class="footer-box mt">
+                <div class="footer-contact footer-block">
+                    <ul>
+                        <li>
+                            <h3>Our Address</h3>
+                            <p>5580 W Chandler Blvd.</p>
+                            <p>Chandler, Arizona 85226</p>
+                        </li>
+                        <li>
+                            <h3>Give Us A Call</h3>
+                            <?php $phone = preg_replace('/[^0-9.]/', '', get_field('tel_number', 268)); ?>
+                            <p><a href="tel:<?php echo $phone; ?>"><?php echo get_field('tel_number', 268); ?></a></p>
+                        </li>
+                        <li>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon-facebook.png" alt="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon-linkedin.png" alt="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon-twitter.png" alt="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon-pinteres.png" alt="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon-instagram.png" alt="#"></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--end footer-contact-->
+                <div class="center-menu footer-block">
+                    <h3>Menu
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
+                        </svg>
+                    </h3>
+                    <ul>
+                        <?php if (have_rows('center_menu', get_homePageId())): ?>
+                            <?php while (have_rows('center_menu', get_homePageId())): the_row(); ?>
+                                <li>
+                                    <a href="<?php the_sub_field('link', get_homePageId()); ?>"><?php the_sub_field('link_text', get_homePageId()); ?></a>
+                                </li>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div><!--end footer-contact-->
+                <div class="footer-links footer-block">
+                    <div class="innerCont">
+                        <h3>Quick Links
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" viewBox="0 0 320 512">
+                                <path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
+                            </svg>
+                        </h3>
+                        <ul>
+                            <?php if (have_rows('quick_links', get_homePageId())): ?>
+                                <?php while (have_rows('quick_links', get_homePageId())): the_row(); ?>
+                                    <li>
+                                        <a href="<?php the_sub_field('link', get_homePageId()); ?>"><?php the_sub_field('link_text', get_homePageId()); ?></a>
+                                    </li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div><!--End innerCont-->
+                </div><!--end footer-links-->
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="footer-copyright">
+        <p>&copy; <?php echo date("Y"); ?> Peace Vacations | <a href="/terms-and-conditions/">Terms & Conditions</a> | <a href="/privacy-policy/">Privacy Policy</a></p>
+    </div><!--end footer-copyright-->
+</footer><!--end footer-->
+<?php include('templates-parts/css-parts/footer-css.php'); ?>
+<?php if (get_field('display_mobile_bottom_bar') == 'Yes'): ?>
+    <div class="mobile-bar">
+        <div class="flex-wrap">
+            <a href="/contact-us/">contact us</a>
+            <?php if (!is_page(299)): ?>
+                <a href="/search-results/" class="rental">find your rental</a>
+            <?php else: ?>
+                <a href="#" id="top-property-management" class="rental">FREE RENTAL EVALUATION</a>
+            <?php endif; ?>
+        </div>
+    </div>
+    <style>
+        .mobile-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 11;
+            padding: 10px 5px !important;
+            background: #fff !important;
+            box-shadow: 0 0 7px #777;
+            display: none;
+        }
+        .mobile-bar .flex-wrap {
+            display: flex;
+            display: -webkit-flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .mobile-bar .flex-wrap a {
+            display: block;
+            margin: 0 3px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 12px 8px;
+            font-size: 16px;
+            border: 1px solid #C8C8C8;
+            color: #999;
+            width: 40%;
+        }
+        .page-id-299 .mobile-bar .flex-wrap a {
+            font-size: 13px;
+            width: 35%;
+        }
+        .page-id-299 .mobile-bar .flex-wrap a.rental {
+            width: 65%;
+        }
+        .mobile-bar .flex-wrap a.rental {
+            width: 60%;
+            border-color: var(--main_color);
+            background: var(--main_color);
+            color: #fff;
+        }
+        @media (max-width: 1199px) {
+            body .footer-copyright {
+                padding-bottom: 90px;
+            }
+            .mobile-bar {
+                display: block;
+            }
+        }
+    </style>
+<?php endif; ?>
+<?php wp_footer(); ?>
+
+<?php if (get_field('global_font_family', get_homePageId()) == 'Original'): ?>
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<?php else:
+    $gfont_url_new = [];
+    for ($i = 1; $i <= 9; $i++) {
+        $gfont_url = '_gfonts_url_value_key_' . $i;
+        $gfont_url_full = explode(':', get_post_meta(get_homePageId(), "$gfont_url")[0]);
+        if (!$gfont_url_full[1]) $gfont_url_full[1] = '400';
+        $gfont_url_new[$gfont_url_full[0]][$gfont_url_full[1]] = 1;
+    }
+    foreach ($gfont_url_new as $key => $gfont_url_sigle) {
+        echo '<link href="https://fonts.googleapis.com/css?family=' . $key . ':' . implode(',', array_keys($gfont_url_sigle)) . '&display=swap" rel="stylesheet">';
+    }
+    ?>
+<?php endif; ?>
+<?php
+if (!is_front_page()) {
+    echo '</body>';
+    echo '</html>';
+}
+?>
+<?php if (get_field('header_variants', get_homePageId()) != 'ILV Simple'): ?>
+    <div class="modal_search">
+        <?php dynamic_sidebar('header-unit-search'); ?>
+        <span class="close_modal">&times</span>
+    </div>
+<?php endif; ?>

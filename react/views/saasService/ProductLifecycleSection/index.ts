@@ -1,0 +1,1 @@
+export { ProductLifecycleSection } from './ProductLifecycleSection';

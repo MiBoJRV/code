@@ -1,0 +1,147 @@
+.main-gallery {
+  background-color: var(--secondary-color);
+  position: relative;
+  &__slide {
+    position: relative;
+    &_left {
+      .main-gallery__container {
+        justify-content: flex-start;
+        text-align: left;
+      }
+    }
+  }
+  &__img-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      height: 75vw;
+      @media (min-width: $tablet-small) {
+        height: 52vw;
+      }
+      @media (min-width: $desktop-small) {
+        height: 52vw;
+      }
+      @media (min-width: $desktop) {
+        height: 46.5vw;
+        min-height: 730px;
+        max-height: 892px;
+      }
+    }
+  }
+  &__holder {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  &__text-block {
+    padding: 30px 20px 0 0;
+    max-width: 904px;
+    color: var(--white-color);
+    @media (min-width: $tablet) {
+      padding: 40px 40px 0;
+    }
+    @media (min-width: $desktop-large) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 700;
+    margin: 0 0 24px;
+    @media (min-width: $tablet) {
+      font-size: 44px;
+      line-height: 54px;
+    }
+    @media (min-width: $desktop) {
+      font-size: 64px;
+      line-height: 84px;
+    }
+  }
+  &__text {
+    font: italic 200 16px/24px var(--sc-font-family);
+    margin: 0 0 24px;
+    @media (min-width: $desktop-small) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+}
+.partners {
+  display: none;
+  @media (min-width: $desktop-small) {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 82px;
+    width: 100%;
+  }
+  &__title {
+    color: var(--white-color);
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+    padding-left: 40px;
+    @media (min-width: $desktop-large) {
+      padding-left: 0;
+    }
+  }
+  &__list {
+    @include customUl;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    opacity: 80%;
+    @media (min-width: $desktop-small) {
+      flex-wrap: nowrap;
+      opacity: 60%;
+    }
+    @media (min-width: $desktop-large) {
+      gap: 56px;
+    }
+  }
+  &__img {
+    width: auto;
+    height: 40px;
+    @media (min-width: $desktop-large) {
+      height: 70px;
+    }
+  }
+}
+.slick-dots {
+  @include customUl;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  button {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+.slick-active button {
+  background-color: rgba(255, 255, 255, 0.8);
+}

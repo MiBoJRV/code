@@ -1,0 +1,15 @@
+export { MenuMain } from './MenuMain';
+export { ButtonText } from './ButtonText';
+export { PageTitle } from './PageTitle';
+export { Heading3 } from './Heading3';
+export { EmphasizedText } from './EmphasizedText';
+export { Heading2 } from './Heading2';
+export { Text2 } from './Text2';
+export { Text1 } from './Text1';
+export { StrongText } from './StrongText';
+export { Heading4 } from './Heading4';
+export { BorderedText } from './BorderedText';
+export { Heading5 } from './Heading5';
+export { FooterLinkText } from './FooterLinkText';
+export { Text4 } from './Text4';
+export { Heading6 } from './Heading6';

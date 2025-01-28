@@ -1,0 +1,249 @@
+<div class="contact">
+    <div class="contact__container">
+        <!-- Contact Us Form -->
+        <form action="#" class="contact__form" id="contactForm">
+            <h2 class="contact__title title">Contact Us</h2>
+            <p class="contact__text">
+                Prefer a more personal touch? Leave your message and contact details, and our manager will reach out to
+                you.
+            </p>
+            <div class="contact__phone-wrapper">
+                <input type="tel" id="phone" class="contact__input" name="phone" placeholder="Phone number" required>
+            </div>
+            <textarea class="contact__message" name="message" cols="30" rows="10" placeholder="Write your message here"
+                required></textarea>
+            <button type="submit" class="contact__btn btn">Contact</button>
+        </form>
+        <!-- Survey Form -->
+        <form action="#" class="contact__survey survey" id="surveyForm">
+            <h2 class="survey__title title">Take Our Survey</h2>
+            <p class="survey__text">
+                Take the first step in safeguarding your financial future by filling out our survey* today.
+            </p>
+            <p class="survey__text">*Filling out this questionnaire is fully voluntary.</p>
+            <div class="survey__block">
+                <!-- Survey Steps -->
+                <fieldset class="survey__content" data-step="1">
+                    <legend class="survey__heading">What financial activity were you involved in during the fraud
+                        incident?</legend>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="services" class="survey__radio" value="Services Scam"
+                            required>
+                        <label for="services" class="survey__radio-label">Services Scam</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="romance" class="survey__radio" value="Romance Scam"
+                            required>
+                        <label for="romance" class="survey__radio-label">Romance Scam</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="crypto" class="survey__radio"
+                            value="Cryptocurrency Scam" required>
+                        <label for="crypto" class="survey__radio-label">Cryptocurrency Scam</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="binary" class="survey__radio" value="Binary Options"
+                            required>
+                        <label for="binary" class="survey__radio-label">Binary Options</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="forex" class="survey__radio" value="Forex Scam"
+                            required>
+                        <label for="forex" class="survey__radio-label">Forex Scam</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="activity" id="other" class="survey__radio" value="Other Scam Types"
+                            required>
+                        <label for="other" class="survey__radio-label">Other Scam Types</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="survey__content" data-step="2" style="display: none;">
+                    <legend class="survey__heading">When did the incident take place?</legend>
+                    <div class="survey__line">
+                        <input type="radio" name="incident_time" id="time1" class="survey__radio"
+                            value="Less than a month ago" required>
+                        <label for="time1" class="survey__radio-label">Less than a month ago</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="incident_time" id="time2" class="survey__radio"
+                            value="1 to 6 months ago" required>
+                        <label for="time2" class="survey__radio-label">1 to 6 months ago</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="incident_time" id="time3" class="survey__radio" value="6 months ago"
+                            required>
+                        <label for="time3" class="survey__radio-label">6 months ago</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="incident_time" id="time4" class="survey__radio"
+                            value="More than a year ago" required>
+                        <label for="time4" class="survey__radio-label">More than a year ago</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="survey__content" data-step="3" style="display: none;">
+                    <legend class="survey__heading">How much monetary loss did you incur?</legend>
+                    <div class="survey__line">
+                        <input type="radio" name="monetary_loss" id="loss1" class="survey__radio" value="Up to $5,000"
+                            required>
+                        <label for="loss1" class="survey__radio-label">Up to $5,000</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="monetary_loss" id="loss2" class="survey__radio"
+                            value="$5,000 - $10,000" required>
+                        <label for="loss2" class="survey__radio-label">$5,000 - $10,000</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="monetary_loss" id="loss3" class="survey__radio"
+                            value="$10,000 - $25,000" required>
+                        <label for="loss3" class="survey__radio-label">$10,000 - $25,000</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="monetary_loss" id="loss4" class="survey__radio" value="Over $50,000"
+                            required>
+                        <label for="loss4" class="survey__radio-label">Over $50,000</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="survey__content" data-step="4" style="display: none;">
+                    <legend class="survey__heading">What is your current employment status?</legend>
+                    <div class="survey__line">
+                        <input type="radio" name="employment_status" id="employed" class="survey__radio"
+                            value="Employed" required>
+                        <label for="employed" class="survey__radio-label">Employed</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="employment_status" id="unemployed" class="survey__radio"
+                            value="Unemployed" required>
+                        <label for="unemployed" class="survey__radio-label">Unemployed</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="employment_status" id="student" class="survey__radio" value="Student"
+                            required>
+                        <label for="student" class="survey__radio-label">Student</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="employment_status" id="retired" class="survey__radio" value="Retired"
+                            required>
+                        <label for="retired" class="survey__radio-label">Retired</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="survey__content" data-step="5" style="display: none;">
+                    <legend class="survey__heading">What is your age group?</legend>
+                    <div class="survey__line">
+                        <input type="radio" name="age_group" id="age1" class="survey__radio" value="35 - 45" required>
+                        <label for="age1" class="survey__radio-label">35 - 45</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="age_group" id="age2" class="survey__radio" value="46 - 56" required>
+                        <label for="age2" class="survey__radio-label">46 - 56</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="age_group" id="age3" class="survey__radio" value="57 - 64" required>
+                        <label for="age3" class="survey__radio-label">57 - 64</label>
+                    </div>
+                    <div class="survey__line">
+                        <input type="radio" name="age_group" id="age4" class="survey__radio" value="65+" required>
+                        <label for="age4" class="survey__radio-label">65+</label>
+                    </div>
+                </fieldset>
+
+                <!-- Final Tab -->
+                <div class="survey__final-tab" style="display: none;" data-step="6">
+                    <input type="text" class="survey__input" name="first_name" placeholder="First name" required>
+                    <input type="text" class="survey__input" name="last_name" placeholder="Last name" required>
+                    <input type="email" class="survey__input" name="email" placeholder="E-mail address" required>
+                    <button type="submit" class="survey__btn btn">Submit Survey</button>
+                </div>
+
+                <!-- Navigation -->
+                <div class="survey__pages">
+                    <button type="button" class="btn btn_white-outline btn_white-icon" id="nextStep">
+                        Next
+                    </button>
+                    <span class="survey__quantity">1/6</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const surveyForm = document.getElementById("surveyForm");
+        const fieldsets = surveyForm.querySelectorAll(".survey__content");
+        const finalTab = surveyForm.querySelector(".survey__final-tab");
+        const nextButton = document.getElementById("nextStep");
+        const progressIndicator = surveyForm.querySelector(".survey__quantity");
+
+        let currentStep = 0;
+
+        const showStep = (step) => {
+            fieldsets.forEach((fieldset, index) => {
+                fieldset.style.display = index === step ? "block" : "none";
+            });
+            finalTab.style.display = step === fieldsets.length ? "block" : "none";
+            progressIndicator.textContent = `${step + 1}/${fieldsets.length + 1}`;
+
+            if (step === fieldsets.length) {
+                nextButton.style.display = "none"; // Hide "Next" button on the final step
+            } else {
+                nextButton.style.display = "inline-block"; // Show "Next" button on other steps
+            }
+        };
+
+        nextButton.addEventListener("click", () => {
+            const inputs = fieldsets[currentStep]?.querySelectorAll("input:checked");
+            if (!inputs?.length) {
+                alert("Please select an option before proceeding.");
+                return;
+            }
+            if (currentStep < fieldsets.length) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        surveyForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(surveyForm);
+            const data = Object.fromEntries(formData.entries());
+            console.log("Survey submitted:", data);
+            alert("Survey submitted successfully!");
+        });
+
+        showStep(currentStep);
+    });
+
+    $(document).ready(function () {
+        const input = document.querySelector("#phone");
+        const iti = intlTelInput(input, {
+            showFlags: true,
+            separateDialCode: true,
+            strictMode: true,
+            initialCountry: "ca",
+            countrySearch: false,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.2.1/build/js/utils.js"),
+        });
+
+        // Form submission handler
+        $("#contactForm").on("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            if (!iti.isValidNumber()) {
+                alert("Please enter a valid phone number.");
+                return;
+            }
+
+            const fullNumber = iti.getNumber(); // Get the full international phone number
+            console.log("Phone number submitted:", fullNumber);
+
+            // Example of using the phone number in a form submission
+            alert(`Form submitted successfully with phone number: ${fullNumber}`);
+
+            document.location.reload();
+        });
+    });
+</script>

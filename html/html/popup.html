@@ -1,0 +1,43 @@
+<div class="popup" id="dialog-content" class="fancybox__content">
+    <div class="popup__wrapper" >
+        <h3 class="popup__title title">We are here to help</h3>
+        <form action="#" id="contactForm" class="contact-form">
+            <input type="text" class="contact-form__input" placeholder="First name" required>
+            <input type="text" class="contact-form__input" placeholder="Last name" required>
+            <input type="email" class="contact-form__input" placeholder="E-mail address" required>
+            <input type="tel" id="phone" class="contact-form__input" name="phone" placeholder="Phone number" required>
+            <button style="margin-top: 24px;" type="submit" value="Send" class="contact-form__btn btn">SEND</button>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        const input = document.querySelector("#phone");
+        const iti = intlTelInput(input, {
+            showFlags: true,
+            separateDialCode: true,
+            strictMode: true,
+            initialCountry: "ca",
+            countrySearch: false,
+            loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.2.1/build/js/utils.js"),
+        });
+
+        // Form submission handler
+        $("#contactForm").on("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            if (!iti.isValidNumber()) {
+                alert("Please enter a valid phone number.");
+                return;
+            }
+
+            const fullNumber = iti.getNumber(); // Get the full international phone number
+            console.log("Phone number submitted:", fullNumber);
+
+            // Example of using the phone number in a form submission
+            alert(`Form submitted successfully with phone number: ${fullNumber}`);
+
+            document.location.reload();
+        });
+    });
+</script>

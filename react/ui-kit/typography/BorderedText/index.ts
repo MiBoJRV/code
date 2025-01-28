@@ -1,0 +1,1 @@
+export { BorderedText } from './BorderedText';

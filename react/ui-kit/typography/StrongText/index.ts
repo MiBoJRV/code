@@ -1,0 +1,1 @@
+export { StrongText } from './StrongText';

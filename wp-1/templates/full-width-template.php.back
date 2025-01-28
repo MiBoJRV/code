@@ -1,0 +1,159 @@
+<?php
+/**
+ * Template Name: Full Width Template
+ */
+get_header(); ?>
+<style>
+.wpContent .container{
+    padding: 30px 15px;
+}
+.positionedCrumbs{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px 0;
+    z-index: 2;
+}
+/*Top Banner*/
+/*Banner Font Size*/
+<?php if(get_field('customize_font_size')=='yes'): ?>
+    h1.topTitle {
+        font-size: <?php the_field('banner_title_font_size'); ?>;
+    }
+    .topBanner h1 {
+        font-size: <?php the_field('banner_title_font_size'); ?>;
+    }
+<?php endif; ?>
+
+/*Banner Height*/
+<?php if(get_field('banner_height')!='Half Height'): ?>
+    .topBanner {
+        height: 450px;
+    }
+    <?php elseif(get_field('banner_height')=='Half Height'): ?>
+    .topBanner {
+        height: 250px;
+    }
+<?php endif; ?>
+
+h1.topTitle{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background: #fff!important;
+    color: var(--main_color);
+}
+.topBanner{
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.topBanner > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+}
+.topBanner h1{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+.topBanner .positioned{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+/*End Top Banner*/
+.wpContent article h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	color: #292929;
+	text-transform: uppercase;
+}
+.wpContent article p {
+	color: rgba(41, 41, 41, 0.75);
+	line-height: 28px;
+    font-size:16px;
+}
+.wpContent article > .row{
+    margin: 2% auto;
+}
+.questionCat{
+    padding: 30px 0;
+}
+/*Responsivness*//*Responsivness*//*Responsivness*/
+@media(max-width: 1199px) {
+.topBanner{
+    height: 250px;
+} 
+}
+
+@media(max-width: 991px) {
+.topBanner h1 {
+    font-size: 42px;
+}
+}
+</style>
+<div class="content">
+    <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post() ?>
+            <?php $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnails'); ?>
+            <?php $current_page_id = get_the_ID(); ?>
+                <?php if(get_field('remove_banner')!='yes'): ?>
+                    <div style="width: 100%; overflow: hidden;" class="topBanner">
+                        <?php
+                        if($thumb[0]==''){
+                            echo '<img style="width: 100%;" src="/wp-content/uploads/2020/01/1920x250.jpg" alt="" class="banner-img"/>';
+                        }else{
+                            echo '<img style="width: 100%;" src="'.$thumb[0].'" alt="" class="banner-img"/>';
+                        }
+                        ?>
+                        <div class="positioned">
+                            <h1><?php the_title(); ?></h1>
+                        </div>
+                        <?php if(get_field('display_breadcrumbs')!='no' && get_field('add_breadcrumbs', get_homePageId())=='yes' || get_field('display_breadcrumbs') == 'yes' && get_field('add_breadcrumbs', get_homePageId())=='no'): ?>
+                            <?php echo '<div class="positionedCrumbs">';?>
+                                <?php
+                                    if(function_exists('yoast_breadcrumb')) {
+                                        echo crumb_nav(get_crumb_array());
+                                    }
+                                ?>
+                            <?php echo '</div>';?>                        
+                        <?php endif; ?>                                       
+                    </div>                           
+                    <?php else: ?>
+                        <?php if(get_field('display_breadcrumbs')!='no' && get_field('add_breadcrumbs', get_homePageId())=='yes' || get_field('display_breadcrumbs') == 'yes' && get_field('add_breadcrumbs', get_homePageId())=='no'): ?>
+                            <?php echo '<div class="positionedCrumbs">';?>
+                                <?php
+                                    if(function_exists('yoast_breadcrumb')) {
+                                        echo crumb_nav(get_crumb_array());
+                                    }
+                                ?>
+                            <?php echo '</div>';?>                        
+                        <?php endif; ?>                   
+                        <h1 class="topTitle"><?php the_title(); ?></h1>
+                <?php endif; ?>
+
+                <?php if(get_the_content()): ?>
+                    <section class="wpContent">
+                        <div class="container">
+                            <article>
+                                <?php the_content(); ?> 
+                            </article>                    
+                        </div>           
+                    </section><!--End wpContent-->                   
+                <?php endif; ?>     
+
+                <?php include(get_theme_root().'/'.get_option('stylesheet').'/templates-parts/main-flexible-content-include.php');?>
+                
+        <?php endwhile; ?>
+    <?php endif; ?>
+</div><!--End content-->
+<?php get_footer(); ?>

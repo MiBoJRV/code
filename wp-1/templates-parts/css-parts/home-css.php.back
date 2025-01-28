@@ -1,0 +1,82 @@
+<style>
+/***Homepage**Homepage**Homepage***/
+/*.drop-overflow {
+    overflow: visible !important;
+}
+.drop-index {
+    z-index: -1 !important;
+}
+p.btn-amenities {
+    float: left;
+    padding: 14px 0;
+    color: #fff;
+    width: 100%;
+    background: var(--second_color);
+    height: 46px;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: .3s;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    margin: 0;  
+}
+p.btn-amenities:hover {
+    cursor: pointer;
+    background: var(--hover_color2);
+}
+
+.videoSearch {
+    z-index: 100;
+}
+.videoSearch .search_widget:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+.form-group.amenities-box {
+    width: 100%;
+}
+.wrap-advensing {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 100%;
+    color: #fff;
+    font: 0;
+    right: 0;
+    z-index: 22;
+    background: rgba(255,255,255, 0.25);
+    width: 100%;
+}
+.wrap-advensing > .wrap-amenities > .form-group {
+    text-align: left;
+    width: 100%;
+    text-shadow: 0 0 5px #000;
+}
+#slider #resortpro-widget-form input, #slider #resortpro-widget-form select {
+    padding: 5px 10px;
+}*/
+
+
+/* Large desktops and laptops */
+@media screen and (max-width: 1200px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+    
+}
+/* Landscape phones and smaller */
+
+
+</style>

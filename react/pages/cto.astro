@@ -1,0 +1,45 @@
+---
+import HtmlLayout from 'src/layouts/HtmlLayout.astro';
+import { MainLayout } from 'src/layouts';
+import {
+  FlexibleEngagementOptionsSection,
+  CtoExpertiseSection,
+  CtoOptionsSection,
+  TechAndBusinessSection,
+  CtoProcessesSection,
+} from 'src/views/ctoService';
+import { TestimonialsSection } from '../views/main';
+import {
+  CTO_EXPERTISE_DATA,
+  ENGAGEMENT_OPTIONS_DATA,
+  FULL_TIME_STO_DATA,
+  HELP_CHALLENGES_DATA,
+  CTO_OPTIONS_DATA,
+  EXPERT_STO_DATA,
+  TECH_AND_BUSINESS_DATA,
+  STO_PROCESSES_DATA,
+  STO_TESTIMONIALS_DATA,
+} from 'src/constants';
+import {
+  CallToActionSection,
+  CallToActionBracketsSection,
+} from 'src/components';
+---
+
+<HtmlLayout title="CTO as a Service">
+  <MainLayout client:visible>
+    <CtoOptionsSection {...CTO_OPTIONS_DATA} />
+    <CallToActionBracketsSection {...HELP_CHALLENGES_DATA} />
+    <CtoExpertiseSection {...CTO_EXPERTISE_DATA} />
+    <FlexibleEngagementOptionsSection {...ENGAGEMENT_OPTIONS_DATA} />
+    <CallToActionSection {...FULL_TIME_STO_DATA} />
+    <CtoProcessesSection {...STO_PROCESSES_DATA} />
+    <TestimonialsSection
+      client:visible
+      {...STO_TESTIMONIALS_DATA}
+      isMoreReviews={false}
+    />
+    <TechAndBusinessSection {...TECH_AND_BUSINESS_DATA} />
+    <CallToActionSection {...EXPERT_STO_DATA} />
+  </MainLayout>
+</HtmlLayout>

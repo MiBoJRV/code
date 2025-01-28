@@ -1,0 +1,39 @@
+$mainOffset: 15; // отступы безопасности для контейнера
+$maxWidth: 1920; // максимальная ширина страницы
+$minWidth: 375; // минимальная ширина телефона
+$containerWidth: 1320; // ширина контейнера из макета
+
+$tablet-small: 600px;
+$tablet: 768px;
+$desktop-small: 1024px;
+$desktop: 1280px;
+$desktop-large: 1440px;
+$maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина контейнера с учетом padding слева и справа
+
+$footerHeight: 100;
+
+:root {
+  --bs-font-family: "Lato", sans-serif;
+  --bs-font-size: 16px;
+  --bs-font-weight: 400;
+  --bs-line-height: 24px;
+  --bs-font-color: #555;
+  --bs-transition: .3s ease-in-out;
+  --bs-radius: 10px;
+  --sc-font-family:  "Inter", serif;
+
+  --primary-color: #007bff;
+  --secondary-color: #002b5c;
+  --white-color: #fff;
+  --black-color: #000;
+  --grey-color: #555;
+  --dark-grey-color: #333;
+  --blue-color: #141434;
+  --dark-blue-color: #000020;
+  --light-grey-color: #f4f4f4;
+  --light-blue-color: #99c0ff;
+  --green-color: #00B67A;
+
+
+  --bs-gradient: linear-gradient(90deg, rgba(0,43,92,1) 0%, rgba(0,123,255,1) 100%);
+}
